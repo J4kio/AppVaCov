@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="219dp"
+        android:layout_height="161dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_x="23dp"
+        android:layout_y="245dp"
+        app:srcCompat="@drawable/login" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:inputType="textEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="@string/Correo"
+     />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+
+        android:hint="@string/Clave"
+        android:inputType="textPassword"
+ />
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:text="Olvidaste tu contraseña?" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:text="Iniciar Sesion"
+        android:layout_marginTop="10dp"
+        app:backgroundTint="#2196F3" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="o" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:text="Registrate"
+        app:backgroundTint="#4CAF50" />
+
+
+
+
+</LinearLayout>

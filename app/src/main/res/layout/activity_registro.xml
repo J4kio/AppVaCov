@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Registro">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="130dp"
+        android:layout_width="158dp"
+        android:layout_height="146dp"
+        app:srcCompat="@drawable/portapapeles" />
+    <EditText
+        android:id="@+id/editText1"
+        android:inputType="textEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:hint="@string/Correo" />
+    <EditText
+        android:id="@+id/editText2"
+        android:inputType="number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/Cedula" />
+    <EditText
+        android:id="@+id/editText3"
+        android:inputType="text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/Nombres"
+      />
+    <EditText
+        android:id="@+id/editText4"
+        android:inputType="text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/Apellidos"/>
+    <EditText
+        android:id="@+id/editText5"
+        android:inputType="textPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/Clave" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:entries="@array/tipo_usuario"
+        android:drawSelectorOnTop="true"
+        android:layout_width="210dp"
+        android:layout_height="34dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:text="Registrarse"
+        app:backgroundTint="#4CAF50" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:text="Cancelar"
+        app:backgroundTint="#DF2113" />
+
+
+
+</LinearLayout>
