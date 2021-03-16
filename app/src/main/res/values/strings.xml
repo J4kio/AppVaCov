@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AppVaCov</string>
     <string name="Correo">Correo</string>
+    <string name="centro_medico">Centro Medico</string>
     <string name="Clave">Clave</string>
     <string name="Edad">Edad</string>
     <string name="Nombres">Nombres</string>
@@ -12,4 +13,6 @@
         <item>Representante de sitio de Vacunación</item>
         <item>Receptor y Distribuidor de Vacunas</item>
     </string-array>
+
+
 </resources>

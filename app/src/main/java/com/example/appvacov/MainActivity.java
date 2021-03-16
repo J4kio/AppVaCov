@@ -1,45 +1,63 @@
 package com.example.appvacov;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     Button btn1,btn2;
+    Spinner spinner1;
     EditText editText1,editText2;
-
-
+    RequestQueue rq;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        spinner1 = (Spinner)findViewById(R.id.spinner1);
         editText1 = (EditText)findViewById(R.id.editText1);
         editText2 = (EditText)findViewById(R.id.editText2);
         btn1 = (Button) findViewById(R.id.button1);
+        rq = Volley.newRequestQueue(this);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validar_usuario("http://192.168.0.227/appvacov/login.php");
+
+
+                 if(spinner1.getSelectedItem().toString().equals("Usuario de Vacunación")) {
+                     login("http://192.168.0.227/appvacov/login_usuario_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"usuario_vacunacion");
+
+
+                }
+                else if (spinner1.getSelectedItem().toString().equals("Personal de Vacunación")){
+                     login("http://192.168.0.227/appvacov/login_personal_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"personal_vacunacion");
+
+                }
+                else if (spinner1.getSelectedItem().toString().equals("Representante de sitio de Vacunación")){
+
+                     login("http://192.168.0.227/appvacov/login_usuario_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"representante");
+                }
+                else if (spinner1.getSelectedItem().toString().equals("Receptor y Distribuidor de Vacunas")){
+
+                     login("http://192.168.0.227/appvacov/login_usuario_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"receptor");
+                }
 
                 
             }
@@ -49,44 +67,77 @@ public class MainActivity extends AppCompatActivity {
          btn2.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            startActivity(new Intent(MainActivity.this,Registro.class));
+
+            if(spinner1.getSelectedItem().toString().equals("Usuario de Vacunación")) {
+                startActivity(new Intent(MainActivity.this, RegistroUsuario.class));
+
+            }
+            else if (spinner1.getSelectedItem().toString().equals("Personal de Vacunación")){
+                startActivity(new Intent(MainActivity.this, RegistroPersonalVacunacion.class));
+
+            }
+            else if (spinner1.getSelectedItem().toString().equals("Representante de sitio de Vacunación")){
+
+
+            }
+            else if (spinner1.getSelectedItem().toString().equals("Receptor y Distribuidor de Vacunas")){
+
+
+            }
         }
     });
 
 
     }
-    private void validar_usuario(String URL){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>(){
-            @Override
-            public void onResponse (String Response){
 
-                if(!Response.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Log In", Toast.LENGTH_SHORT).show();
+    private void login(String URL, String usuario){
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                int cedula;
+                try {
+                    cedula = Integer.parseInt(response.getString("cedula"));
+                    if (usuario.equals("usuario_vacunacion")) {
+                        startActivity(new Intent(MainActivity.this, UsuarioVacunacion.class));
+                    }
+                    else if (usuario.equals("personal_vacunacion")){
+                        startActivity(new Intent(MainActivity.this, PersonalVacunacion.class));
+                    }
+                    else if (usuario.equals("representante")){
+
+                    }
+                    else if (usuario.equals("receptor")){
+
+                    }
+                    Toast.makeText(getApplicationContext(), "Log In" , Toast.LENGTH_SHORT).show();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-                else {
-                    Toast.makeText(getApplicationContext(), "Usuario o Clave Incorrecto", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }, new Response.ErrorListener(){
 
+
+            }
+
+        }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse (VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), "Usuario o Clave Incorrecto", Toast.LENGTH_SHORT).show();
             }
+        }
 
-        }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("cedula", editText1.getText().toString());
-                parametros.put("clave", editText2.getText().toString());
-                return parametros;
-            }
 
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+        );
+        rq.add(jsonObjectRequest);
+
 
     }
+   /** public void enviarCedula(){
+        EditText messageView = (EditText)findViewById(R.id.message);
+        String messageText = messageView.getText().toString();
+        Intent intent = new Intent(this , PersonalVacunacion.class);
+        intent.putExtra(PersonalVacunacion.EXTRA_MESSAGE,messageText);
+        startActivity(intent);
+
+    }**/
 
 }

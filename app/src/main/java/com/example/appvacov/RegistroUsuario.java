@@ -2,8 +2,6 @@ package com.example.appvacov;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,14 +22,13 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Registro extends AppCompatActivity {
+public class RegistroUsuario extends AppCompatActivity {
     Button registrar, cancelar;
     EditText editText1,editText2,editText3,editText4,editText5,editText6;
-    Spinner spinner1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
+        setContentView(R.layout.activity_registro_usuario);
 
         editText1 = (EditText)findViewById(R.id.editText1);
         editText2 = (EditText)findViewById(R.id.editText2);
@@ -40,14 +37,14 @@ public class Registro extends AppCompatActivity {
         editText5 = (EditText)findViewById(R.id.editText5);
         editText6 = (EditText)findViewById(R.id.editText6);
         registrar = (Button) findViewById(R.id.button1);
-        spinner1= (Spinner)findViewById(R.id.spinner1);
         cancelar = (Button) findViewById(R.id.button2);
+
 
 
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ejecutarServicio("http://192.168.0.227/appvacov/registro.php");
+                ejecutarServicio("http://192.168.0.227/appvacov/registro_usuario_vacunacion.php");
             }
         });
 
@@ -55,7 +52,7 @@ public class Registro extends AppCompatActivity {
         cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Registro.this,MainActivity.class));
+                startActivity(new Intent(RegistroUsuario.this,MainActivity.class));
             }
         });
 
@@ -84,7 +81,6 @@ public class Registro extends AppCompatActivity {
                 parametros.put("nombres", editText3.getText().toString());
                 parametros.put("apellidos", editText4.getText().toString());
                 parametros.put("clave", editText6.getText().toString());
-                parametros.put("usuario", spinner1.getSelectedItem().toString());
                 parametros.put("edad", editText5.getText().toString());
                 return parametros;
                 }
