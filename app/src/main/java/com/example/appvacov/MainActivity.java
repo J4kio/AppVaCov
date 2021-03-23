@@ -42,6 +42,7 @@ public class MainActivity extends Activity {
 
 
                  if(spinner1.getSelectedItem().toString().equals("Usuario de Vacunación")) {
+
                      login("http://192.168.0.227/appvacov/login_usuario_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"usuario_vacunacion");
 
 
@@ -52,11 +53,12 @@ public class MainActivity extends Activity {
                 }
                 else if (spinner1.getSelectedItem().toString().equals("Representante de sitio de Vacunación")){
 
-                     login("http://192.168.0.227/appvacov/login_usuario_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"representante");
+                     login("http://192.168.0.227/appvacov/login_representante_sitio_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"representante");
+
                 }
                 else if (spinner1.getSelectedItem().toString().equals("Receptor y Distribuidor de Vacunas")){
 
-                     login("http://192.168.0.227/appvacov/login_usuario_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"receptor");
+                     login("http://192.168.0.227/appvacov/login_admin_vacunas.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"receptor");
                 }
 
                 
@@ -78,10 +80,11 @@ public class MainActivity extends Activity {
             }
             else if (spinner1.getSelectedItem().toString().equals("Representante de sitio de Vacunación")){
 
+                startActivity(new Intent(MainActivity.this, RegistroRepresentanteSitioVacunacion.class));
 
             }
             else if (spinner1.getSelectedItem().toString().equals("Receptor y Distribuidor de Vacunas")){
-
+                startActivity(new Intent(MainActivity.this, RegistroAdminVacunas.class));
 
             }
         }
@@ -105,9 +108,11 @@ public class MainActivity extends Activity {
                     }
                     else if (usuario.equals("representante")){
 
+                        startActivity(new Intent(MainActivity.this, RepresentanteSitioVacunacion.class));
+
                     }
                     else if (usuario.equals("receptor")){
-
+                        startActivity(new Intent(MainActivity.this, AdminVacunas.class));
                     }
                     Toast.makeText(getApplicationContext(), "Log In" , Toast.LENGTH_SHORT).show();
 
@@ -131,13 +136,6 @@ public class MainActivity extends Activity {
 
 
     }
-   /** public void enviarCedula(){
-        EditText messageView = (EditText)findViewById(R.id.message);
-        String messageText = messageView.getText().toString();
-        Intent intent = new Intent(this , PersonalVacunacion.class);
-        intent.putExtra(PersonalVacunacion.EXTRA_MESSAGE,messageText);
-        startActivity(intent);
 
-    }**/
 
 }

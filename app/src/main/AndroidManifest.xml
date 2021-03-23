@@ -12,8 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppVaCov"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UsuarioVacunacion"></activity>
-        <activity android:name=".RegistroPersonalVacunacion"></activity>
+        <activity android:name=".AdminVacunas"></activity>
+        <activity android:name=".RegistroAdminVacunas" />
+        <activity android:name=".RegistroRepresentanteSitioVacunacion" />
+        <activity android:name=".RepresentanteSitioVacunacion" />
+        <activity android:name=".UsuarioVacunacion" />
+        <activity android:name=".RegistroPersonalVacunacion" />
         <activity android:name=".PersonalVacunacion" />
         <activity android:name=".RegistroUsuario" />
         <activity android:name=".MainActivity">
