@@ -24,7 +24,8 @@ import java.util.Map;
 
 public class RegistroUsuario extends AppCompatActivity {
     Button registrar, cancelar;
-    EditText editText1,editText2,editText3,editText4,editText5,editText6;
+    Spinner spinner1;
+    EditText editText1,editText2,editText3,editText4,editText5,editText6,editText7,editText8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +37,10 @@ public class RegistroUsuario extends AppCompatActivity {
         editText4 = (EditText)findViewById(R.id.editText4);
         editText5 = (EditText)findViewById(R.id.editText5);
         editText6 = (EditText)findViewById(R.id.editText6);
+        editText7 = (EditText)findViewById(R.id.editText7);
+        editText8 = (EditText)findViewById(R.id.editText8);
         registrar = (Button) findViewById(R.id.button1);
+        spinner1 = (Spinner)findViewById(R.id.spinner1);
         cancelar = (Button) findViewById(R.id.button2);
 
 
@@ -44,7 +48,15 @@ public class RegistroUsuario extends AppCompatActivity {
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ejecutarServicio("http://192.168.0.227/appvacov/registro_usuario_vacunacion.php");
+
+                if(editText6.getText().toString().equals(editText7.getText().toString())){
+                    ejecutarServicio("http://192.168.0.227/appvacov/registro_usuario_vacunacion.php");
+                }
+                else{
+
+                    Toast.makeText(getApplicationContext(),"Las Contraseñas NO Coinciden", Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
 
@@ -82,6 +94,8 @@ public class RegistroUsuario extends AppCompatActivity {
                 parametros.put("apellidos", editText4.getText().toString());
                 parametros.put("clave", editText6.getText().toString());
                 parametros.put("edad", editText5.getText().toString());
+                parametros.put("fecha_nacimiento", editText8.getText().toString());
+                parametros.put("genero",spinner1.getSelectedItem().toString());
                 return parametros;
                 }
 

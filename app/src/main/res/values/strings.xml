@@ -3,16 +3,23 @@
     <string name="Correo">Correo</string>
     <string name="centro_medico">Centro Medico</string>
     <string name="Clave">Clave</string>
+    <string name="Clave2">Repita su Clave</string>
     <string name="Edad">Edad</string>
     <string name="Nombres">Nombres</string>
     <string name="Apellidos">Apellidos</string>
     <string name="id_sitio">Id Sitio De Vacunación</string>
     <string name="Cedula">Cedula</string>
+    <string name="fecha">Fecha de Nacimiento</string>
     <string-array name="tipo_usuario">
         <item>Usuario de Vacunación</item>
         <item>Personal de Vacunación</item>
         <item>Representante de sitio de Vacunación</item>
         <item>Receptor y Distribuidor de Vacunas</item>
+    </string-array>
+    <string-array name="genero">
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>Otro</item>
     </string-array>
 
 
