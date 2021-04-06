@@ -10,6 +10,8 @@
     <string name="id_sitio">Id Sitio De Vacunación</string>
     <string name="Cedula">Cedula</string>
     <string name="fecha">Fecha de Nacimiento</string>
+    <string name="fecha2">Fecha</string>
+    <string name="hora">Hora</string>
     <string-array name="tipo_usuario">
         <item>Usuario de Vacunación</item>
         <item>Personal de Vacunación</item>

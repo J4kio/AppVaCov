@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
+import android.content.Intent;
+import android.widget.EditText;
+import android.widget.TextView;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -20,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends Activity {
+    public static final String EXTRA_MESSAGE = "message";
     Button btn1,btn2;
     Spinner spinner1;
     EditText editText1,editText2;
@@ -101,7 +104,11 @@ public class MainActivity extends Activity {
                 try {
                     cedula = Integer.parseInt(response.getString("cedula"));
                     if (usuario.equals("usuario_vacunacion")) {
-                        startActivity(new Intent(MainActivity.this, UsuarioVacunacion.class));
+
+                        Intent intent = new Intent(MainActivity.this ,UsuarioVacunacion.class);
+                        intent.putExtra(UsuarioVacunacion.EXTRA_MESSAGE,String.valueOf(cedula));
+                        startActivity(intent);
+
                     }
                     else if (usuario.equals("personal_vacunacion")){
                         startActivity(new Intent(MainActivity.this, PersonalVacunacion.class));
