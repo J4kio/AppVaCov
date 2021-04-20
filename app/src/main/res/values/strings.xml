@@ -24,5 +24,15 @@
         <item>Otro</item>
     </string-array>
 
+    <string-array name="sedes">
+        <item>H. Suba</item>
+        <item>Colferias</item>
+        <item>C. Marly</item>
+        <item>H. Engativa</item>
+        <item>H. San Ignacio</item>
+        <item>H. Mederi</item>
+        <item>H. Usaquen</item>
+    </string-array>
+
 
 </resources>

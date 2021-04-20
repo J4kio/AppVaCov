@@ -10,8 +10,10 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginBottom="93dp"
         android:text="Registrar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
@@ -32,7 +34,7 @@
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="47dp"
         android:clickable="true"
         android:ems="10"
         android:focusable="false"
@@ -58,6 +60,8 @@
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
         android:text="Cedula:"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/editText1" />
 
@@ -69,6 +73,20 @@
         android:layout_marginLeft="11dp"
         android:layout_marginTop="45dp"
         android:text="11111111111"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginBottom="70dp"
+        android:entries="@array/sedes"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/editText2"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/editText2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

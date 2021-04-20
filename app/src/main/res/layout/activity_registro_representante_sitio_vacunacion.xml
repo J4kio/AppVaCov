@@ -9,28 +9,26 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="210dp"
-        android:layout_height="41dp"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="48dp"
         android:backgroundTint="#FF0000"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button1"
+        app:layout_constraintStart_toStartOf="@+id/button1"
         app:layout_constraintTop_toBottomOf="@+id/button1" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="210dp"
-        android:layout_height="41dp"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="17dp"
         android:backgroundTint="#572364"
         android:text="Registrar"
         app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editText6"
+        app:layout_constraintStart_toStartOf="@+id/editText6"
         app:layout_constraintTop_toBottomOf="@+id/editText6" />
 
     <EditText
@@ -49,11 +47,11 @@
         android:id="@+id/editText4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="13dp"
         android:ems="10"
         android:hint="@string/Apellidos"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
+        app:layout_constraintBottom_toTopOf="@+id/spinner1"
         app:layout_constraintStart_toStartOf="@+id/editText3"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
@@ -66,8 +64,8 @@
         android:hint="@string/Clave"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/button1"
-        app:layout_constraintEnd_toEndOf="@+id/editText5"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintEnd_toEndOf="@+id/spinner1"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
 
     <EditText
         android:id="@+id/editText3"
@@ -93,14 +91,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/servicio_al_cliente" />
 
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="210dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="12dp"
-        android:ems="10"
-        android:hint="@string/id_sitio"
-        android:inputType="number"
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="211dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="14dp"
+        android:entries="@array/sedes"
         app:layout_constraintBottom_toTopOf="@+id/editText6"
         app:layout_constraintEnd_toEndOf="@+id/editText4"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
@@ -109,8 +105,8 @@
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="87dp"
-        android:layout_marginRight="87dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginRight="86dp"
         android:layout_marginBottom="18dp"
         android:ems="10"
         android:hint="@string/Cedula"

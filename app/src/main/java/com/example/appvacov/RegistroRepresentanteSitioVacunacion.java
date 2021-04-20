@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -22,7 +23,8 @@ import java.util.Map;
 
 public class RegistroRepresentanteSitioVacunacion extends AppCompatActivity {
     Button registrar, cancelar;
-    EditText editText1,editText2,editText3,editText4,editText5,editText6;
+    EditText editText1,editText2,editText3,editText4,editText6;
+    Spinner spinenr1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +33,7 @@ public class RegistroRepresentanteSitioVacunacion extends AppCompatActivity {
         editText2 = (EditText)findViewById(R.id.editText2);
         editText3 = (EditText)findViewById(R.id.editText3);
         editText4 = (EditText)findViewById(R.id.editText4);
-        editText5 = (EditText)findViewById(R.id.editText5);
+        spinenr1 = (Spinner)findViewById(R.id.spinner1);
         editText6 = (EditText)findViewById(R.id.editText6);
         registrar = (Button) findViewById(R.id.button1);
         cancelar = (Button) findViewById(R.id.button2);
@@ -58,14 +60,14 @@ public class RegistroRepresentanteSitioVacunacion extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>(){
             @Override
             public void onResponse (String Response){
-                Toast.makeText(getApplicationContext(),"Usuario Registrado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Usuario Registrado", Toast.LENGTH_LONG).show();
 
             }
         }, new Response.ErrorListener(){
 
             @Override
             public void onErrorResponse (VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
             }
 
         }) {
@@ -77,7 +79,7 @@ public class RegistroRepresentanteSitioVacunacion extends AppCompatActivity {
                 parametros.put("nombres", editText3.getText().toString());
                 parametros.put("apellidos", editText4.getText().toString());
                 parametros.put("clave", editText6.getText().toString());
-                parametros.put("id_sitio", editText5.getText().toString());
+                parametros.put("sede", spinenr1.getSelectedItem().toString());
                 return parametros;
             }
 

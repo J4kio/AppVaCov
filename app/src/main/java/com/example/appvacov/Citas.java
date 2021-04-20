@@ -1,12 +1,11 @@
 package com.example.appvacov;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,27 +21,31 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Cita extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Citas extends AppCompatActivity {
+    List<ListElement> elements;
+    TextView textView4;
     RequestQueue rq;
-    TextView textView,fecha, hora, id, sede;
-
     public static final String EXTRA_MESSAGE = "message";
+    public static final String EXTRA_MESSAGE2 = "message";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cita);
+        setContentView(R.layout.activity_citas);
         Intent intent = getIntent();
-        String cedula = intent.getStringExtra(EXTRA_MESSAGE);
-        fecha = (TextView) findViewById(R.id.textView7);
-        hora = (TextView) findViewById(R.id.textView6);
-        id = (TextView) findViewById(R.id.textView8);
-        sede = (TextView) findViewById(R.id.textView9);
-        textView = (TextView) findViewById(R.id.textView5);
-        textView.setText(cedula);
-        consultar("http://192.168.0.227/appvacov/consulta_cita.php?usuario="+cedula);
+
+        String sede = intent.getStringExtra(EXTRA_MESSAGE);
+
+        textView4 = (TextView) findViewById(R.id.textview4);
+        textView4.setText(sede);
+
+        consultar ("http://192.168.0.227/appvacov/consulta_citas.php?sede="+textView4.getText().toString());
+
     }
     private void consultar(String URL){
+        elements = new ArrayList<>();
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -50,12 +53,8 @@ public class Cita extends AppCompatActivity {
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         jsonObject = response.getJSONObject(i);
-                        hora.setText(jsonObject.getString("hora"));
-                        fecha.setText(jsonObject.getString("fecha"));
-                        id.setText(jsonObject.getString("id"));
-                        sede.setText(jsonObject.getString("sede"));
 
-
+                      elements.add(new ListElement(jsonObject.getString("id"), jsonObject.getString("hora"), jsonObject.getString("fecha"), jsonObject.getString("sede"), jsonObject.getString("usuario")));
 
                     } catch (JSONException e) {
                         Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -63,6 +62,13 @@ public class Cita extends AppCompatActivity {
                     }
 
                 }
+                ListAdapter listAdapter = new ListAdapter(elements,Citas.this);
+                RecyclerView recyclerView = findViewById(R.id.recyclerView);
+                recyclerView.setHasFixedSize(true);
+                recyclerView.setLayoutManager(new LinearLayoutManager(Citas.this));
+                recyclerView.setAdapter(listAdapter);
+
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -72,5 +78,11 @@ public class Cita extends AppCompatActivity {
         });
         rq = Volley.newRequestQueue(this);
         rq.add(jsonArrayRequest);
+
+
+
+
     }
+
+
 }

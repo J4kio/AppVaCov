@@ -54,7 +54,7 @@ public class RegistroUsuario extends AppCompatActivity {
                 }
                 else{
 
-                    Toast.makeText(getApplicationContext(),"Las Contraseñas NO Coinciden", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Las Contraseñas NO Coinciden", Toast.LENGTH_LONG).show();
 
                 }
             }
@@ -74,14 +74,14 @@ public class RegistroUsuario extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>(){
             @Override
             public void onResponse (String Response){
-            Toast.makeText(getApplicationContext(),"Usuario Registrado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Usuario Registrado", Toast.LENGTH_LONG).show();
 
             }
         }, new Response.ErrorListener(){
 
             @Override
             public void onErrorResponse (VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
             }
 
         }) {

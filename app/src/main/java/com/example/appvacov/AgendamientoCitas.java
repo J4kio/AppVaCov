@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import java.util.Calendar;
@@ -41,6 +42,7 @@ import org.json.JSONObject;
 public class AgendamientoCitas extends AppCompatActivity implements View.OnClickListener {
     EditText fecha, hora;
     Button btn1;
+    Spinner spinner1;
     RequestQueue rq;
     private int mYear, mMonth, mDay, mHour, mMinute;
     TextView textView;
@@ -53,6 +55,7 @@ public class AgendamientoCitas extends AppCompatActivity implements View.OnClick
         String cedula = intent.getStringExtra(EXTRA_MESSAGE);
         textView = (TextView) findViewById(R.id.textView);
         textView.setText(cedula);
+        spinner1 = (Spinner)findViewById(R.id.spinner1);
         btn1 = (Button) findViewById(R.id.button);
         fecha = (EditText) findViewById(R.id.editText1);
         hora = (EditText) findViewById(R.id.editText2);
@@ -116,14 +119,14 @@ public class AgendamientoCitas extends AppCompatActivity implements View.OnClick
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>(){
             @Override
             public void onResponse (String Response){
-                Toast.makeText(getApplicationContext(),"Cita Registrada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Cita Registrada", Toast.LENGTH_LONG).show();
 
             }
         }, new Response.ErrorListener(){
 
             @Override
             public void onErrorResponse (VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
             }
 
         }) {
@@ -132,7 +135,7 @@ public class AgendamientoCitas extends AppCompatActivity implements View.OnClick
                 Map<String, String> parametros = new HashMap<String, String>();
                 parametros.put("fecha", fecha.getText().toString());
                 parametros.put("hora", hora.getText().toString());
-                parametros.put("sede", "1");
+                parametros.put("sede", spinner1.getSelectedItem().toString());
                 parametros.put("usuario", textView.getText().toString());
                 return parametros;
             }

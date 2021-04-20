@@ -101,6 +101,7 @@ public class MainActivity extends Activity {
             @Override
             public void onResponse(JSONObject response) {
                 int cedula;
+
                 try {
                     cedula = Integer.parseInt(response.getString("cedula"));
                     if (usuario.equals("usuario_vacunacion")) {
@@ -111,7 +112,11 @@ public class MainActivity extends Activity {
 
                     }
                     else if (usuario.equals("personal_vacunacion")){
-                        startActivity(new Intent(MainActivity.this, PersonalVacunacion.class));
+                        Intent intent = new Intent(MainActivity.this ,PersonalVacunacion.class);
+                        intent.putExtra(PersonalVacunacion.EXTRA_MESSAGE,String.valueOf(cedula));
+                        startActivity(intent);
+
+
                     }
                     else if (usuario.equals("representante")){
 
@@ -121,7 +126,7 @@ public class MainActivity extends Activity {
                     else if (usuario.equals("receptor")){
                         startActivity(new Intent(MainActivity.this, AdminVacunas.class));
                     }
-                    Toast.makeText(getApplicationContext(), "Log In" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Log In" , Toast.LENGTH_LONG).show();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -133,12 +138,13 @@ public class MainActivity extends Activity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Usuario o Clave Incorrecto", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Usuario o Clave Incorrecto", Toast.LENGTH_LONG).show();
             }
         }
 
 
         );
+        rq = Volley.newRequestQueue(this);
         rq.add(jsonObjectRequest);
 
 
