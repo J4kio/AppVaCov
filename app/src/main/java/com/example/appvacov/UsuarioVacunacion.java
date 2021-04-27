@@ -11,10 +11,23 @@ import android.widget.TextView;
 
 
 import android.os.Bundle;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class UsuarioVacunacion extends AppCompatActivity {
     Button btn1, btn2, btn3;
     TextView textView3;
+    RequestQueue rq;
     public static final String EXTRA_MESSAGE = "message";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +37,7 @@ public class UsuarioVacunacion extends AppCompatActivity {
         String cedula = intent.getStringExtra(EXTRA_MESSAGE);
         textView3 = (TextView) findViewById(R.id.textView3);
         textView3.setText(cedula);
+        rq = Volley.newRequestQueue(this);
         btn1 = (Button) findViewById(R.id.button1);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,5 +62,35 @@ public class UsuarioVacunacion extends AppCompatActivity {
 
             }
         });
+        btn3 = (Button) findViewById(R.id.button3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            eliminar_cita("http://192.168.0.227/appvacov/eliminar_cita.php?cedula="+cedula);
+                Toast.makeText(getApplicationContext(),"Cita Eliminada", Toast.LENGTH_LONG).show();
+
+
+            }
+        });
+
+    }
+    private void eliminar_cita(String URL){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>(){
+            @Override
+            public void onResponse (String Response){
+                Toast.makeText(getApplicationContext(),"Cita eliminada", Toast.LENGTH_LONG).show();
+
+            }
+        }, new Response.ErrorListener(){
+
+            @Override
+            public void onErrorResponse (VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
+            }
+
+        });
+        rq = Volley.newRequestQueue(this);
+        rq.add(stringRequest);
     }
 }

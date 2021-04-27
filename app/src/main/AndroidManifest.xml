@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppVaCov"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Citas"></activity>
+        <activity android:name=".Citas" />
         <activity android:name=".Cita" />
         <activity android:name=".AgendamientoCitas" />
         <activity android:name=".AdminVacunas" />
