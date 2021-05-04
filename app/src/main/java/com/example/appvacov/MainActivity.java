@@ -124,7 +124,12 @@ public class MainActivity extends Activity {
 
                     }
                     else if (usuario.equals("receptor")){
-                        startActivity(new Intent(MainActivity.this, AdminVacunas.class));
+
+                        Intent intent = new Intent(MainActivity.this ,AdminVacunas.class);
+                        intent.putExtra(AdminVacunas.EXTRA_MESSAGE,String.valueOf(cedula));
+                        startActivity(intent);
+
+                       //startActivity(new Intent(MainActivity.this, AdminVacunas.class));
                     }
                     Toast.makeText(getApplicationContext(), "Log In" , Toast.LENGTH_LONG).show();
 

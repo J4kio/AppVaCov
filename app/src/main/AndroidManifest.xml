@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppVaCov"
         android:usesCleartextTraffic="true">
+        <activity android:name=".AsignarVacuna"/>
+        <activity android:name=".AgregarVacunas" />
         <activity android:name=".Citas" />
         <activity android:name=".Cita" />
         <activity android:name=".AgendamientoCitas" />
@@ -26,7 +28,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -11,7 +11,12 @@
     <string name="Cedula">Cedula</string>
     <string name="fecha">Fecha de Nacimiento</string>
     <string name="fecha2">Fecha</string>
+    <string name="fechar">Fecha Recepcion</string>
+    <string name="fechav">Fecha de Vencimiento</string>
     <string name="hora">Hora</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="id_lote">Id Lote</string>
+
     <string-array name="tipo_usuario">
         <item>Usuario de Vacunación</item>
         <item>Personal de Vacunación</item>
@@ -32,6 +37,15 @@
         <item>H. San Ignacio</item>
         <item>H. Mederi</item>
         <item>H. Usaquen</item>
+    </string-array>
+
+    <string-array name="marcas">
+        <item>Pfizer</item>
+        <item>AstraZeneca</item>
+        <item>Novavax​</item>
+        <item>Sinovac​</item>
+        <item>Covax</item>
+
     </string-array>
 
 
