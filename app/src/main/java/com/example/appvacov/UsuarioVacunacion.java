@@ -26,17 +26,22 @@ import java.util.Map;
 
 public class UsuarioVacunacion extends AppCompatActivity {
     Button btn1, btn2, btn3;
-    TextView textView3;
+    TextView textView3,textView5;
     RequestQueue rq;
     public static final String EXTRA_MESSAGE = "message";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario_vacunacion);
         Intent intent = getIntent();
-        String cedula = intent.getStringExtra(EXTRA_MESSAGE);
+        String message = intent.getStringExtra(EXTRA_MESSAGE);
+        String[] parts = message.split("-");
         textView3 = (TextView) findViewById(R.id.textView3);
-        textView3.setText(cedula);
+        textView3.setText(parts[0]);//0 = cedula
+
+        textView5 = (TextView) findViewById(R.id.textView5);
+        textView5.setText(parts[1]); // 1 = fase
         rq = Volley.newRequestQueue(this);
         btn1 = (Button) findViewById(R.id.button1);
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +72,7 @@ public class UsuarioVacunacion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-            eliminar_cita("http://192.168.0.227/appvacov/eliminar_cita.php?cedula="+cedula);
+            eliminar_cita("http://192.168.0.227/appvacov/eliminar_cita.php?cedula="+textView3.getText());
                 Toast.makeText(getApplicationContext(),"Cita Eliminada", Toast.LENGTH_LONG).show();
 
 

@@ -4,17 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -24,28 +21,23 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Citas extends AppCompatActivity {
-    List<ListElement> elements;
-    TextView textView4;
+public class ConsultaVacunados extends AppCompatActivity {
+    List<ListElement2> elements2;
     RequestQueue rq;
-    public static final String EXTRA_MESSAGE = "message";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_citas);
-        Intent intent = getIntent();
+        setContentView(R.layout.activity_consulta_vacunados);
 
-        String sede = intent.getStringExtra(EXTRA_MESSAGE);
 
-        textView4 = (TextView) findViewById(R.id.textview4);
-        textView4.setText(sede);
-
-        consultar ("http://192.168.0.227/appvacov/consulta_citas.php?sede="+textView4.getText().toString());
-
+        consultar ("http://192.168.0.227/appvacov/consulta_vacunados.php");
     }
     private void consultar(String URL){
-        elements = new ArrayList<>();
+        elements2 = new ArrayList<>();
+
+
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -54,7 +46,7 @@ public class Citas extends AppCompatActivity {
                     try {
                         jsonObject = response.getJSONObject(i);
 
-                      elements.add(new ListElement(jsonObject.getString("id"), jsonObject.getString("hora"), jsonObject.getString("fecha"), jsonObject.getString("sede"), jsonObject.getString("usuario")));
+                        elements2.add(new ListElement2(jsonObject.getString("nombres"), jsonObject.getString("apellidos"), jsonObject.getString("cedula"), jsonObject.getString("fecha_vacunacion"), jsonObject.getString("dosis"),jsonObject.getString("fase"),jsonObject.getString("edad")));
 
                     } catch (JSONException e) {
                         Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -62,11 +54,14 @@ public class Citas extends AppCompatActivity {
                     }
 
                 }
-                ListAdapter listAdapter = new ListAdapter(elements,Citas.this);
-                RecyclerView recyclerView = findViewById(R.id.recyclerView);
+
+
+
+                ListAdapter2 listAdapter2 = new ListAdapter2(elements2,ConsultaVacunados.this);
+                RecyclerView recyclerView = findViewById(R.id.recyclerView2);
                 recyclerView.setHasFixedSize(true);
-                recyclerView.setLayoutManager(new LinearLayoutManager(Citas.this));
-                recyclerView.setAdapter(listAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(ConsultaVacunados.this));
+                recyclerView.setAdapter(listAdapter2);
 
 
             }
@@ -83,6 +78,4 @@ public class Citas extends AppCompatActivity {
 
 
     }
-
-
 }

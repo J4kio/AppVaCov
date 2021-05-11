@@ -23,6 +23,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends Activity {
     public static final String EXTRA_MESSAGE = "message";
+
     Button btn1,btn2;
     Spinner spinner1;
     EditText editText1,editText2;
@@ -101,13 +102,17 @@ public class MainActivity extends Activity {
             @Override
             public void onResponse(JSONObject response) {
                 int cedula;
+                int fase;
 
                 try {
                     cedula = Integer.parseInt(response.getString("cedula"));
                     if (usuario.equals("usuario_vacunacion")) {
 
+
+                        fase = Integer.parseInt(response.getString("fase"));
+
                         Intent intent = new Intent(MainActivity.this ,UsuarioVacunacion.class);
-                        intent.putExtra(UsuarioVacunacion.EXTRA_MESSAGE,String.valueOf(cedula));
+                        intent.putExtra(UsuarioVacunacion.EXTRA_MESSAGE,String.valueOf(cedula)+"-"+String.valueOf(fase));
                         startActivity(intent);
 
                     }

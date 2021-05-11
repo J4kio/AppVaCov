@@ -38,6 +38,16 @@
         <item>H. Mederi</item>
         <item>H. Usaquen</item>
     </string-array>
+    <string-array name="sedesa">
+        <item>H. Suba</item>
+        <item>Colferias</item>
+        <item>C. Marly</item>
+        <item>H. Engativa</item>
+        <item>H. San Ignacio</item>
+        <item>H. Mederi</item>
+        <item>H. Usaquen</item>
+        <item>Domicilio</item>
+    </string-array>
 
     <string-array name="marcas">
         <item>Pfizer</item>
@@ -45,7 +55,25 @@
         <item>Novavax​</item>
         <item>Sinovac​</item>
         <item>Covax</item>
+    </string-array>
 
+    <string-array name="ocupacion">
+        <item>T. Humano Salud 1ra Linea</item>
+        <item>Servicios Generales</item>
+        <item>P. Administrativo</item>
+        <item>P. Apoyo Asistencial</item>
+        <item>T. Humano Salud</item>
+        <item>Profesor</item>
+        <item>Fuerzas Militares</item>
+        <item>Policia</item>
+        <item>Madre Comunitaria</item>
+        <item>Cuidador institucional</item>
+        <item>Otro</item>
+    </string-array>
+
+    <string-array name="comorbilidades">
+        <item>Si</item>
+        <item>No</item>
     </string-array>
 
 
