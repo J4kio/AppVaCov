@@ -44,26 +44,15 @@
                 android:layout_marginLeft="4dp"
                 android:layout_toRightOf="@+id/image">
                 <TextView
-                    android:id="@+id/textview8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp"
-                    android:text="Nombre: "
-                    android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    />
-                <TextView
                     android:id="@+id/textview9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="17sp"
+                    android:layout_marginBottom="2dp"
+                    android:text="ID Reporte: "
                     android:gravity="center"
-                    android:text="Apellido: "
-                    android:textStyle="bold"
                     android:textColor="@android:color/black"
-
+                    android:textSize="17sp"
+                    android:textStyle="bold"
                     />
                 <TextView
                     android:id="@+id/textview10"
@@ -71,13 +60,24 @@
                     android:layout_height="wrap_content"
                     android:textSize="17sp"
                     android:gravity="center"
-                    android:text="Cedula: "
+                    android:text="Cedula Paciente: "
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
 
                     />
                 <TextView
                     android:id="@+id/textview11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:gravity="center"
+                    android:text="Cedula Personal: "
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+
+                    />
+                <TextView
+                    android:id="@+id/textview12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="17sp"
@@ -89,22 +89,11 @@
                     />
 
                 <TextView
-                    android:id="@+id/textview12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="17sp"
-                    android:text="Dosis:"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/black"
-
-                    />
-                <TextView
                     android:id="@+id/textview13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="17sp"
-                    android:text="Fase:"
+                    android:text="Sede:"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
@@ -115,7 +104,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="17sp"
-                    android:text="Edad:"
+                    android:text="Dosis:"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+
+                    />
+                <TextView
+                    android:id="@+id/textview15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:text="ID lote:"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+
+                    />
+                <TextView
+                    android:id="@+id/textview16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:text="Marca:"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:textColor="@android:color/black"
@@ -213,6 +224,18 @@
                     />
                 <TextView
                     android:id="@+id/textview7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="######"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+
+
+                    />
+                <TextView
+                    android:id="@+id/textview8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="######"

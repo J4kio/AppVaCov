@@ -48,27 +48,30 @@ public class ListAdapter2 extends RecyclerView.Adapter<ListAdapter2.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView nombre, apellido,cedula,fecha,dosis,fase,edad;
+        TextView id_reporte, cedulapa,cedulap,fecha,sede,dosis,id_lote,marca;
         ViewHolder(View itemView){
             super(itemView);
-            nombre = itemView.findViewById(R.id.textview1);
-            apellido = itemView.findViewById(R.id.textview2);
-            cedula = itemView.findViewById(R.id.textview3);
+            id_reporte = itemView.findViewById(R.id.textview1);
+            cedulapa = itemView.findViewById(R.id.textview2);
+            cedulap = itemView.findViewById(R.id.textview3);
             fecha = itemView.findViewById(R.id.textview4);
-            dosis = itemView.findViewById(R.id.textview5);
-            fase = itemView.findViewById(R.id.textview6);
-            edad = itemView.findViewById(R.id.textview7);
-
+            sede = itemView.findViewById(R.id.textview5);
+            dosis = itemView.findViewById(R.id.textview6);
+            id_lote = itemView.findViewById(R.id.textview7);
+            marca = itemView.findViewById(R.id.textview8);
 
         }
         void bindData(final ListElement2 item){
-            nombre.setText(item.getNombre());
-            apellido.setText(item.getApellido());
-            cedula.setText(item.getCedula());
+
+
+            id_reporte.setText(item.getId_reporte());
+            cedulapa.setText(item.getCedulapa());
+            cedulap.setText(item.getCedulap());
             fecha.setText(item.getFecha());
+            sede.setText(item.getSede());
             dosis.setText(item.getDosis());
-            fase.setText(item.getFase());
-            edad.setText(item.getEdad());
+            id_lote.setText(item.getId_lote());
+            marca.setText(item.getMarca());
 
 
         }

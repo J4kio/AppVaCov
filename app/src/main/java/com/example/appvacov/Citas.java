@@ -1,11 +1,14 @@
 package com.example.appvacov;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,11 +27,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Citas extends AppCompatActivity {
+public class Citas extends AppCompatActivity  {
     List<ListElement> elements;
-    TextView textView4;
+    public TextView textView4,cedula_personal_citas;
+
     RequestQueue rq;
-    public static final String EXTRA_MESSAGE = "message";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +40,17 @@ public class Citas extends AppCompatActivity {
         setContentView(R.layout.activity_citas);
         Intent intent = getIntent();
 
-        String sede = intent.getStringExtra(EXTRA_MESSAGE);
+        String sede = intent.getStringExtra("sede");
+        String cedula = intent.getStringExtra("cedula");
 
         textView4 = (TextView) findViewById(R.id.textview4);
         textView4.setText(sede);
+        cedula_personal_citas = (TextView) findViewById(R.id.cedula_personal_citas);
+        cedula_personal_citas.setText(cedula);
 
         consultar ("http://192.168.0.227/appvacov/consulta_citas.php?sede="+textView4.getText().toString());
+
+
 
     }
     private void consultar(String URL){
@@ -54,7 +63,7 @@ public class Citas extends AppCompatActivity {
                     try {
                         jsonObject = response.getJSONObject(i);
 
-                      elements.add(new ListElement(jsonObject.getString("id"), jsonObject.getString("hora"), jsonObject.getString("fecha"), jsonObject.getString("sede"), jsonObject.getString("usuario")));
+                      elements.add(new ListElement(jsonObject.getString("id"), jsonObject.getString("hora"), jsonObject.getString("fecha"), jsonObject.getString("sede"), jsonObject.getString("usuario"),cedula_personal_citas.getText().toString()));
 
                     } catch (JSONException e) {
                         Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -67,7 +76,6 @@ public class Citas extends AppCompatActivity {
                 recyclerView.setHasFixedSize(true);
                 recyclerView.setLayoutManager(new LinearLayoutManager(Citas.this));
                 recyclerView.setAdapter(listAdapter);
-
 
             }
         }, new Response.ErrorListener() {
@@ -83,6 +91,5 @@ public class Citas extends AppCompatActivity {
 
 
     }
-
 
 }

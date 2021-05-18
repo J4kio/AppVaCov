@@ -144,7 +144,6 @@ public class RegistroUsuario extends AppCompatActivity {
                 parametros.put("edad", editText5.getText().toString());
                 parametros.put("genero",spinner1.getSelectedItem().toString());
                 parametros.put("fase", String.valueOf(fase));
-                parametros.put("dosis", "0");
                 parametros.put("ocupacion", spinner2.getSelectedItem().toString());
                 parametros.put("comorbilidades", String.valueOf(comorbilidades));
                 return parametros;

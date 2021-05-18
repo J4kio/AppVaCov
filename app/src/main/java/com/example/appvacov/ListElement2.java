@@ -2,40 +2,64 @@ package com.example.appvacov;
 
 public class ListElement2 {
 
-    private String nombre;
-    private String apellido;
-    private String cedula;
+    private String id_reporte;
+    private String cedulapa;
+    private String cedulap;
     private String fecha;
+    private String sede;
     private String dosis;
-    private String fase;
-    private String edad;
+    private String id_lote;
+    private String marca;
+
+    public ListElement2(String id_reporte, String cedulapa, String cedulap, String fecha, String sede, String dosis, String id_lote, String marca) {
+        this.id_reporte = id_reporte;
+        this.cedulapa = cedulapa;
+        this.cedulap = cedulap;
+        this.fecha = fecha;
+        this.sede = sede;
+        this.dosis = dosis;
+        this.id_lote = id_lote;
+        this.marca = marca;
+    }
+
+    public String getId_reporte() {
+        return id_reporte;
+    }
+
+    public void setId_reporte(String id_reporte) {
+        this.id_reporte = id_reporte;
+    }
+
+    public String getCedulapa() {
+        return cedulapa;
+    }
+
+    public void setCedulapa(String cedulapa) {
+        this.cedulapa = cedulapa;
+    }
+
+    public String getCedulap() {
+        return cedulap;
+    }
+
+    public void setCedulap(String cedulap) {
+        this.cedulap = cedulap;
+    }
 
     public String getFecha() {
         return fecha;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getSede() {
+        return sede;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
+    public void setSede(String sede) {
+        this.sede = sede;
     }
 
     public String getDosis() {
@@ -46,32 +70,19 @@ public class ListElement2 {
         this.dosis = dosis;
     }
 
-    public String getFase() {
-        return fase;
+    public String getId_lote() {
+        return id_lote;
     }
 
-    public void setFase(String fase) {
-        this.fase = fase;
+    public void setId_lote(String id_lote) {
+        this.id_lote = id_lote;
     }
 
-    public String getEdad() {
-        return edad;
+    public String getMarca() {
+        return marca;
     }
 
-    public void setEdad(String edad) {
-        this.edad = edad;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
-
-    public ListElement2(String nombre, String apellido, String cedula, String fecha, String dosis, String fase, String edad) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cedula = cedula;
-        this.fecha = fecha;
-        this.dosis = dosis;
-        this.fase = fase;
-        this.edad = edad;
-    }
-
-
-
 }

@@ -120,7 +120,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textview1"
+                    android:id="@+id/ctextview1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
@@ -131,7 +131,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textview2"
+                    android:id="@+id/ctextview2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="######"
@@ -143,7 +143,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/textview3"
+                    android:id="@+id/ctextview3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="######"
@@ -155,7 +155,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/textview4"
+                    android:id="@+id/ctextview4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="######"
@@ -167,7 +167,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/textview5"
+                    android:id="@+id/ctextview5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="######"
@@ -178,7 +178,7 @@
 
                     />
                 <Button
-                    android:id="@+id/button1"
+                    android:id="@+id/cbutton1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"

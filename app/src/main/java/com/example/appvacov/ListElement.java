@@ -7,13 +7,23 @@ public class ListElement {
     private String fecha;
     private String sede;
     private String usuario;
+    private String cedulap;
 
-    public ListElement(String id, String hora, String fecha, String sede, String usuario) {
+    public String getCedulap() {
+        return cedulap;
+    }
+
+    public void setCedulap(String cedulap) {
+        this.cedulap = cedulap;
+    }
+
+    public ListElement(String id, String hora, String fecha, String sede, String usuario, String cedulap) {
         this.id = id;
         this.hora = hora;
         this.fecha = fecha;
         this.sede = sede;
         this.usuario = usuario;
+        this.cedulap = cedulap;
     }
 
     public String getId() {

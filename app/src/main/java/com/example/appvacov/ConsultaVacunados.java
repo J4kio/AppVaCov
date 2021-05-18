@@ -46,7 +46,7 @@ public class ConsultaVacunados extends AppCompatActivity {
                     try {
                         jsonObject = response.getJSONObject(i);
 
-                        elements2.add(new ListElement2(jsonObject.getString("nombres"), jsonObject.getString("apellidos"), jsonObject.getString("cedula"), jsonObject.getString("fecha_vacunacion"), jsonObject.getString("dosis"),jsonObject.getString("fase"),jsonObject.getString("edad")));
+                        elements2.add(new ListElement2(jsonObject.getString("id_reporte"), jsonObject.getString("cedula_paciente"), jsonObject.getString("cedula_personal"), jsonObject.getString("fecha_vacunacion"), jsonObject.getString("sede"),jsonObject.getString("dosis"),jsonObject.getString("id_lote"),jsonObject.getString("marca")));
 
                     } catch (JSONException e) {
                         Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();

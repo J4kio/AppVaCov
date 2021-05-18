@@ -47,7 +47,8 @@ public class PersonalVacunacion extends AppCompatActivity {
                             try {
                                 sede = response.getString("sede");
                                 Intent intent = new Intent(PersonalVacunacion.this ,Citas.class);
-                                intent.putExtra(Citas.EXTRA_MESSAGE,String.valueOf(sede));
+                                intent.putExtra("sede",String.valueOf(sede));
+                                intent.putExtra("cedula",String.valueOf(cedula));
                                 startActivity(intent);
 
 
