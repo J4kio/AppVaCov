@@ -34,8 +34,8 @@ public class PersonalVacunacion extends AppCompatActivity {
         String cedula = intent.getStringExtra(EXTRA_MESSAGE);
         textView4 = (TextView) findViewById(R.id.textView4);
         textView4.setText(cedula);
-        btn2 = (Button) findViewById(R.id.button1);
-        btn2.setOnClickListener(new View.OnClickListener() {
+        btn1 = (Button) findViewById(R.id.button1);
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -82,8 +82,17 @@ public class PersonalVacunacion extends AppCompatActivity {
 
             }
         });
+        btn2 = (Button) findViewById(R.id.button2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PersonalVacunacion.this ,ConsultaVacunadosP.class);
+                intent.putExtra("cedula",String.valueOf(cedula));
+                startActivity(intent);
 
 
+            }
+        });
     }
 
 }

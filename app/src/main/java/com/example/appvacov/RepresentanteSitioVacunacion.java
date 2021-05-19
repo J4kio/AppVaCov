@@ -6,25 +6,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class RepresentanteSitioVacunacion extends AppCompatActivity {
     Button btn1, btn2, btn3;
+    TextView textView10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_representante_sitio_vacunacion);
 
 
+        Bundle extras = getIntent().getExtras();
+        String cedula = extras.getString("cedula");
+
+        textView10 = findViewById(R.id.textView10);
+        textView10.setText(cedula);
         btn1 = (Button) findViewById(R.id.button1);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(UsuarioVacunacion.this, AgendamientoCitas.class));
 
-               /** Intent intent = new Intent(UsuarioVacunacion.this ,AgendamientoCitas.class);
-                intent.putExtra(UsuarioVacunacion.EXTRA_MESSAGE,textView3.getText().toString());
-                startActivity(intent);**/
+                Intent intent = new Intent(RepresentanteSitioVacunacion.this ,ConsultaFase.class);
+                startActivity(intent);
 
             }
         });
@@ -34,9 +39,8 @@ public class RepresentanteSitioVacunacion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                /**Intent intent = new Intent(UsuarioVacunacion.this ,Cita.class);
-                intent.putExtra(UsuarioVacunacion.EXTRA_MESSAGE,textView3.getText().toString());
-                startActivity(intent);**/
+                Intent intent = new Intent(RepresentanteSitioVacunacion.this ,ConsultaSegundaDosis.class);
+                startActivity(intent);
 
             }
         });

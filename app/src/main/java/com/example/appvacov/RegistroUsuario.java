@@ -23,9 +23,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegistroUsuario extends AppCompatActivity {
-    Button registrar, cancelar;
-    Spinner spinner1,spinner2,spinner3;
-    EditText editText1,editText2,editText3,editText4,editText5,editText6,editText7;
+    private Button registrar, cancelar;
+    private Spinner spinner1,spinner2,spinner3;
+    private EditText editText1,editText2,editText3,editText4,editText5,editText6,editText7,editText8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,7 @@ public class RegistroUsuario extends AppCompatActivity {
         editText5 = (EditText)findViewById(R.id.editText5);
         editText6 = (EditText)findViewById(R.id.editText6);
         editText7 = (EditText)findViewById(R.id.editText7);
-
+        editText8 = (EditText)findViewById(R.id.editText8);
         registrar = (Button) findViewById(R.id.button1);
         spinner1 = (Spinner)findViewById(R.id.spinner1);
         spinner2 = (Spinner)findViewById(R.id.spinner2);
@@ -146,6 +146,7 @@ public class RegistroUsuario extends AppCompatActivity {
                 parametros.put("fase", String.valueOf(fase));
                 parametros.put("ocupacion", spinner2.getSelectedItem().toString());
                 parametros.put("comorbilidades", String.valueOf(comorbilidades));
+                parametros.put("direccion", editText8.getText().toString());
                 return parametros;
                 }
 

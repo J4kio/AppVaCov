@@ -124,8 +124,9 @@ public class MainActivity extends Activity {
 
                     }
                     else if (usuario.equals("representante")){
-
-                        startActivity(new Intent(MainActivity.this, RepresentanteSitioVacunacion.class));
+                        Intent intent = new Intent(MainActivity.this ,RepresentanteSitioVacunacion.class);
+                        intent.putExtra("cedula",String.valueOf(cedula));
+                        startActivity(intent);
 
                     }
                     else if (usuario.equals("receptor")){

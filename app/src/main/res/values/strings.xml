@@ -16,6 +16,7 @@
     <string name="hora">Hora</string>
     <string name="cantidad">Cantidad</string>
     <string name="id_lote">Id Lote</string>
+    <string name="Direccion">Direccion</string>
 
     <string-array name="tipo_usuario">
         <item>Usuario de Vacunación</item>
@@ -74,6 +75,14 @@
     <string-array name="comorbilidades">
         <item>Si</item>
         <item>No</item>
+    </string-array>
+
+    <string-array name="fases">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
 
 

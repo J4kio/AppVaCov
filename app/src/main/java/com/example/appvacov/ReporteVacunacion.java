@@ -59,7 +59,6 @@ public class ReporteVacunacion extends AppCompatActivity {
         sede_reporte = findViewById(R.id.sede_reporte);
         lote_reporte = findViewById(R.id.lote_reporte);
         marca_reporte = findViewById(R.id.marca_reporte);
-
         cedula_paciente_reporte.setText(usuario);
         cedula_personal_reporte.setText(cedulap);
         fecha_reporte.setText(fecha);
