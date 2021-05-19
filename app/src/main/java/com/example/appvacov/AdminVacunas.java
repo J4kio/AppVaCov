@@ -19,7 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class AdminVacunas extends AppCompatActivity {
-    public Button btn2,btn1,btn3;
+    public Button btn2,btn1,btn3,btn4;
     public TextView textView3;
     public static final String EXTRA_MESSAGE = "message";
     @Override
@@ -50,7 +50,15 @@ public class AdminVacunas extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(AdminVacunas.this, RegistroPersonalVacunacion.class));
+                startActivity(new Intent(AdminVacunas.this, VerInventario.class));
+
+            }
+        });
+        btn4 = (Button) findViewById(R.id.button4);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminVacunas.this, ActualizarInventario.class));
 
             }
         });

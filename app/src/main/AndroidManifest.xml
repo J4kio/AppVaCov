@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppVaCov"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ConsultaFase"></activity>
+        <activity android:name=".ActualizarInventario"></activity>
+        <activity android:name=".VerInventario" />
+        <activity android:name=".ConsultaFase" />
         <activity android:name=".ConsultaSegundaDosis" />
         <activity android:name=".ConsultaVacunadosP" />
         <activity android:name=".ReporteVacunacion" />
