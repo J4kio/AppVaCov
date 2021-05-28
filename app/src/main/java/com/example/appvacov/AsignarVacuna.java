@@ -88,7 +88,7 @@ public class AsignarVacuna extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+
             }
         }
 

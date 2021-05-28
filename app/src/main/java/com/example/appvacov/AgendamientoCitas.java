@@ -43,7 +43,7 @@ public class AgendamientoCitas extends AppCompatActivity implements View.OnClick
     EditText fecha, hora;
     Button btn1;
     Spinner spinner1;
-    RequestQueue rq;
+
     private int mYear, mMonth, mDay, mHour, mMinute;
     TextView textView;
     public static final String EXTRA_MESSAGE = "message";

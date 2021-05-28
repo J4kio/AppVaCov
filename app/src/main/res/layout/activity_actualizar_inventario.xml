@@ -6,4 +6,92 @@
     android:layout_height="match_parent"
     tools:context=".ActualizarInventario">
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="109dp"
+        android:text="Actualizar"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Aspinner" />
+
+    <EditText
+        android:id="@+id/Afechar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="21dp"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/fechar"
+        app:layout_constraintBottom_toTopOf="@+id/Afechav"
+        app:layout_constraintStart_toStartOf="@+id/Acantidad"
+        app:layout_constraintTop_toBottomOf="@+id/Acantidad" />
+
+    <EditText
+        android:id="@+id/Acantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:ems="10"
+        android:hint="@string/cantidad"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/Afechar"
+        app:layout_constraintStart_toStartOf="@+id/Aid_lote"
+        app:layout_constraintTop_toBottomOf="@+id/Aid_lote" />
+
+    <EditText
+        android:id="@+id/Afechav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/fechav"
+        app:layout_constraintBottom_toTopOf="@+id/Aspinner"
+        app:layout_constraintStart_toStartOf="@+id/Afechar"
+        app:layout_constraintTop_toBottomOf="@+id/Afechar" />
+
+    <EditText
+        android:id="@+id/Aid_lote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="@string/id_lote"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/Acantidad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+    <Spinner
+        android:id="@+id/Aspinner"
+        android:layout_width="213dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
+        android:entries="@array/marcas"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Afechav" />
+
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="168dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/Aid_lote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/update" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
