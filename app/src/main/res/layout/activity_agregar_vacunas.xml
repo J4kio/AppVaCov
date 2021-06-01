@@ -37,7 +37,7 @@
         android:layout_marginBottom="22dp"
         android:ems="10"
         android:hint="@string/Cedula"
-        android:inputType="number"
+        android:inputType="none"
         app:layout_constraintBottom_toTopOf="@+id/editText2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/cantidad_registro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -76,14 +76,14 @@
         android:ems="10"
         android:hint="@string/id_lote"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintBottom_toTopOf="@+id/cantidad_registro"
         app:layout_constraintStart_toStartOf="@+id/editText1"
         app:layout_constraintTop_toBottomOf="@+id/editText1" />
 
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="212dp"
-        android:layout_height="0dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="26dp"
         android:entries="@array/marcas"
         app:layout_constraintBottom_toTopOf="@+id/button"
@@ -101,7 +101,7 @@
         android:focusable="false"
         android:hint="@string/fechar"
         app:layout_constraintBottom_toTopOf="@+id/editText5"
-        app:layout_constraintStart_toStartOf="@+id/editText3"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintStart_toStartOf="@+id/cantidad_registro"
+        app:layout_constraintTop_toBottomOf="@+id/cantidad_registro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

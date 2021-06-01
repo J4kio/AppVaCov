@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class AgregarVacunas extends AppCompatActivity implements View.OnClickListener {
     public static final String EXTRA_MESSAGE = "message";
-    public EditText editText1,editText2,editText3,fecha1,fecha2;
+    public EditText editText1,editText2,cantidad_registro,fecha1,fecha2;
     public Spinner spinner1;
     private int mYear, mMonth, mDay;
     public Button btn1;
@@ -43,7 +43,7 @@ public class AgregarVacunas extends AppCompatActivity implements View.OnClickLis
         editText1 = (EditText) findViewById(R.id.editText1);
         editText1.setText(cedula);
         editText2 = (EditText) findViewById(R.id.editText2);
-        editText3 = (EditText) findViewById(R.id.editText3);
+        cantidad_registro = (EditText) findViewById(R.id.cantidad_registro);
         spinner1 = (Spinner)findViewById(R.id.spinner1);
         fecha1 = (EditText) findViewById(R.id.editText4);
         fecha1.setOnClickListener(this);
@@ -79,7 +79,7 @@ public class AgregarVacunas extends AppCompatActivity implements View.OnClickLis
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("cantidad", editText3.getText().toString());
+                parametros.put("cantidad", cantidad_registro.getText().toString());
                 parametros.put("fecha_de_recepcion", fecha1.getText().toString());
                 parametros.put("marca", spinner1.getSelectedItem().toString());
                 parametros.put("fecha_vencimiento", fecha2.getText().toString());
