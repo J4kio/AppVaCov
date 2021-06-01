@@ -10,7 +10,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.net.Uri;
+import android.util.Log;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -29,7 +30,7 @@ import java.util.Map;
 public class ReporteVacunacion extends AppCompatActivity {
 
    private TextView cedula_paciente_reporte,cedula_personal_reporte,fecha_reporte,sede_reporte;
-   private Button btn;
+   private Button btn, btn2;
    private EditText lote_reporte;
    private Spinner marca_reporte;
     @Override
@@ -73,6 +74,33 @@ public class ReporteVacunacion extends AppCompatActivity {
 
             }
         });
+
+        btn2 = findViewById(R.id.button6);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+/**
+
+                Uri.Builder builder = new Uri.Builder();
+                builder.scheme("https")
+                        .authority("www.google.com")
+                        .appendPath("maps")
+                        .appendPath("dir")
+                        .appendPath(" ")
+                        .appendQueryParameter("api", "1")
+                        .appendQueryParameter("destination", 4.66615523 + "," + -74.09219472);
+                String url = builder.build().toString(); Log.d("Directions", url);
+                Intent intent = new Intent(Intent.ACTION_VIEW); intent.setData(Uri.parse(url));startActivity(intent);
+
+**/
+
+               startActivity(new Intent(ReporteVacunacion.this, Maps.class));
+            }
+        });
+
+
+
 
     }
     private void ejecutarServicio(String URL){

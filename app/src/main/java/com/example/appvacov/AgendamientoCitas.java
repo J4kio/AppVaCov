@@ -44,6 +44,10 @@ public class AgendamientoCitas extends AppCompatActivity implements View.OnClick
     Button btn1;
     Spinner spinner1;
 
+
+    public String correo="";
+
+
     private int mYear, mMonth, mDay, mHour, mMinute;
     TextView textView;
     public static final String EXTRA_MESSAGE = "message";
@@ -65,9 +69,58 @@ public class AgendamientoCitas extends AppCompatActivity implements View.OnClick
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                consulta_correo("http://192.168.0.227/appvacov/consulta_correo.php?cedula="+cedula);
                 insertar("http://192.168.0.227/appvacov/registro_cita.php");
+                sendMail();
+
             }
         });
+    }
+
+
+
+    private void consulta_correo(String URL){
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+                try {
+                    correo =response.getString("correo");
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+            }
+        }
+
+
+        );
+
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonObjectRequest);
+
+
+    }
+
+
+
+    private void sendMail() {
+        //Send Mail
+        JavaMailAPI javaMailAPI = new JavaMailAPI(this,correo,"cita","Su cita se agendo correctamente: "+ System.getProperty("line.separator")+"Cedula: "+ textView.getText()+ System.getProperty("line.separator")+"Fecha: "+ fecha.getText()+ System.getProperty("line.separator")+"Hora: "+ hora.getText()+ System.getProperty("line.separator")+"Sede: "+ spinner1.getSelectedItem());
+
+        javaMailAPI.execute();
+        
+
     }
 
             @Override
