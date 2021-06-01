@@ -28,7 +28,7 @@ public class ConsultaSegundaDosis extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulta_segunda_dosis);
 
-        consultar ("http://192.168.0.227/appvacov/consulta_segunda_dosis.php");
+        consultar ("http://192.168.1.8/appvacov/consulta_segunda_dosis.php");
     }
 
     private void consultar(String URL){

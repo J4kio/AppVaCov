@@ -39,7 +39,7 @@ public class PersonalVacunacion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                    JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, "http://192.168.0.227/appvacov/consulta_sede.php?cedula="+cedula, null, new Response.Listener<JSONObject>() {
+                    JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, "http://192.168.1.8/appvacov/consulta_sede.php?cedula="+cedula, null, new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
                             String sede;

@@ -32,7 +32,7 @@ public class ConsultaVacunados extends AppCompatActivity {
         setContentView(R.layout.activity_consulta_vacunados);
 
 
-        consultar ("http://192.168.0.227/appvacov/consulta_vacunados.php");
+        consultar ("http://192.168.1.8/appvacov/consulta_vacunados.php");
     }
     private void consultar(String URL){
         elements2 = new ArrayList<>();

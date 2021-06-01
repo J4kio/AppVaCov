@@ -35,7 +35,7 @@ public class ConsultaVacunadosP extends AppCompatActivity {
 
         cedula_personal_que_vacuno = findViewById(R.id.cedula_personal_que_vacuno);
         cedula_personal_que_vacuno.setText(cedula);
-        consultar ("http://192.168.0.227/appvacov/consulta_vacunadosp.php?cedulape="+cedula);
+        consultar ("http://192.168.1.8/appvacov/consulta_vacunadosp.php?cedulape="+cedula);
 
     }
 

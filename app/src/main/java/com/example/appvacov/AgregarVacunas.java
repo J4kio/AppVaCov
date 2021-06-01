@@ -33,6 +33,7 @@ public class AgregarVacunas extends AppCompatActivity implements View.OnClickLis
     public Spinner spinner1;
     private int mYear, mMonth, mDay;
     public Button btn1;
+    public String conexion = "192.168.1.8";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class AgregarVacunas extends AppCompatActivity implements View.OnClickLis
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertar("http://192.168.0.227/appvacov/registro_vacuna.php");
+                insertar("http://192.168.1.8/appvacov/registro_vacuna.php");
             }
         });
 

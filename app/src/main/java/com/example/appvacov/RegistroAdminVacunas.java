@@ -40,7 +40,7 @@ public class RegistroAdminVacunas extends AppCompatActivity {
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ejecutarServicio("http://192.168.0.227/appvacov/registro_admin_vacunas.php");
+                ejecutarServicio("http://192.168.1.8/appvacov/registro_admin_vacunas.php");
             }
         });
 

@@ -42,7 +42,7 @@ public class ConsultaFase extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                consultar ("http://192.168.0.227/appvacov/consulta_fase.php?fase="+spinnerfase.getSelectedItem().toString());
+                consultar ("http://192.168.1.8/appvacov/consulta_fase.php?fase="+spinnerfase.getSelectedItem().toString());
 
             }
         });

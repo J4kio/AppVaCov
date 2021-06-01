@@ -43,7 +43,7 @@ public class RegistroPersonalVacunacion extends AppCompatActivity {
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ejecutarServicio("http://192.168.0.227/appvacov/registro_personal_vacunacion.php");
+                ejecutarServicio("http://192.168.1.8/appvacov/registro_personal_vacunacion.php");
             }
         });
 

@@ -52,7 +52,7 @@ public class RegistroUsuario extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(editText6.getText().toString().equals(editText7.getText().toString())){
-                    ejecutarServicio("http://192.168.0.227/appvacov/registro_usuario_vacunacion.php");
+                    ejecutarServicio("http://192.168.1.8/appvacov/registro_usuario_vacunacion.php");
                 }
                 else{
 

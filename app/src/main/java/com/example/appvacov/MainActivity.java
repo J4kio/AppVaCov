@@ -47,22 +47,22 @@ public class MainActivity extends Activity {
 
                  if(spinner1.getSelectedItem().toString().equals("Usuario de Vacunación")) {
 
-                     login("http://192.168.0.227/appvacov/login_usuario_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"usuario_vacunacion");
+                     login("http://192.168.1.8/appvacov/login_usuario_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"usuario_vacunacion");
 
 
                 }
                 else if (spinner1.getSelectedItem().toString().equals("Personal de Vacunación")){
-                     login("http://192.168.0.227/appvacov/login_personal_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"personal_vacunacion");
+                     login("http://192.168.1.8/appvacov/login_personal_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"personal_vacunacion");
 
                 }
                 else if (spinner1.getSelectedItem().toString().equals("Representante de sitio de Vacunación")){
 
-                     login("http://192.168.0.227/appvacov/login_representante_sitio_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"representante");
+                     login("http://192.168.1.8/appvacov/login_representante_sitio_vacunacion.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"representante");
 
                 }
                 else if (spinner1.getSelectedItem().toString().equals("Receptor y Distribuidor de Vacunas")){
 
-                     login("http://192.168.0.227/appvacov/login_admin_vacunas.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"receptor");
+                     login("http://192.168.1.8/appvacov/login_admin_vacunas.php?cedula="+editText1.getText().toString()+"&clave="+editText2.getText().toString(),"receptor");
                 }
 
                 

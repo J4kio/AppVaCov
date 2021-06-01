@@ -49,7 +49,9 @@ public class ActualizarInventario extends AppCompatActivity implements View.OnCl
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                actualizar("http://192.168.0.227/appvacov/actualizacion_inventario_general.php?cantidad="+cantidad.getText()+ "&id_lote="+id_lote.getText()+"&fechar="+fechar.getText()+"&fechav="+fechav.getText()+"&marca="+spinner1.getSelectedItem().toString());
+
+
+                actualizar("http://192.168.1.8/appvacov/actualizacion_inventario_general.php?cantidad="+cantidad.getText()+ "&id_lote="+id_lote.getText()+"&fechar="+fechar.getText()+"&fechav="+fechav.getText()+"&marca="+spinner1.getSelectedItem().toString());
 
 
             }

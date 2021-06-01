@@ -48,7 +48,7 @@ public class Citas extends AppCompatActivity  {
         cedula_personal_citas = (TextView) findViewById(R.id.cedula_personal_citas);
         cedula_personal_citas.setText(cedula);
 
-        consultar ("http://192.168.0.227/appvacov/consulta_citas.php?sede="+textView4.getText().toString());
+        consultar ("http://192.168.1.8/appvacov/consulta_citas.php?sede="+textView4.getText().toString());
 
 
 

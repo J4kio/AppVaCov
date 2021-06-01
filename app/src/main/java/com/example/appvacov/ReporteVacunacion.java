@@ -68,8 +68,8 @@ public class ReporteVacunacion extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            ejecutarServicio("http://192.168.0.227/appvacov/registro_reporte_vacunacion.php");
-            actualizar("http://192.168.0.227/appvacov/aplicar_vacuna.php?id_lote="+lote_reporte.getText().toString());
+            ejecutarServicio("http://192.168.1.8/appvacov/registro_reporte_vacunacion.php");
+            actualizar("http://192.168.1.8/appvacov/aplicar_vacuna.php?id_lote="+lote_reporte.getText().toString());
 
             }
         });

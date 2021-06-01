@@ -72,7 +72,7 @@ public class UsuarioVacunacion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-            eliminar_cita("http://192.168.0.227/appvacov/eliminar_cita.php?cedula="+textView3.getText());
+            eliminar_cita("http://192.168.1.8/appvacov/eliminar_cita.php?cedula="+textView3.getText());
                 Toast.makeText(getApplicationContext(),"Cita Eliminada", Toast.LENGTH_LONG).show();
 
 

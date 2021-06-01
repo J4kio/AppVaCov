@@ -28,7 +28,7 @@ public class VerInventario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_inventario);
 
-        consultar ("http://192.168.0.227/appvacov/consulta_inventario_general.php");
+        consultar ("http://192.168.1.8/appvacov/consulta_inventario_general.php");
     }
     private void consultar(String URL){
         elements4 = new ArrayList<>();

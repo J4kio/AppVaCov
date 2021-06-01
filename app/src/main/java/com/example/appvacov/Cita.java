@@ -40,7 +40,7 @@ public class Cita extends AppCompatActivity {
         sede = (TextView) findViewById(R.id.textView9);
         textView = (TextView) findViewById(R.id.textView5);
         textView.setText(cedula);
-        consultar("http://192.168.0.227/appvacov/consulta_cita.php?usuario="+cedula);
+        consultar("http://192.168.1.8/appvacov/consulta_cita.php?usuario="+cedula);
     }
     private void consultar(String URL){
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(URL, new Response.Listener<JSONArray>() {

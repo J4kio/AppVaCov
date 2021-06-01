@@ -42,8 +42,8 @@ public class AsignarVacuna extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              insertar("http://192.168.0.227/appvacov/registro_vacuna_sede.php");
-              actualizar("http://192.168.0.227/appvacov/actualizacion_vacuna.php?cantidad="+editText2.getText().toString()+"&id_lote="+editText1.getText().toString());
+              insertar("http://192.168.1.8/appvacov/registro_vacuna_sede.php");
+              actualizar("http://192.168.1.8/appvacov/actualizacion_vacuna.php?cantidad="+editText2.getText().toString()+"&id_lote="+editText1.getText().toString());
             }
         });
     }
